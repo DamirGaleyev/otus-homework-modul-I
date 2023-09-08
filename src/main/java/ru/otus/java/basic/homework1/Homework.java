@@ -1,15 +1,31 @@
 package ru.otus.java.basic.homework1;
 
+
+import java.util.Scanner;
+
 public class Homework {
     public static void main(String[] args) {
-        greetings();
-        checkSign(1, 2, 3);
-        selectColor(10);
-        compareNumbers(1,5);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите число от 1 до 5");
+        int result = scanner.nextInt();
+        System.out.println("Вы выбрали число " + result);
+
+        if (result == 1) {
+            greetings();
+        } else if (result == 2) {
+            checkSign(1, 2, 3);
+        } else if (result == 3) {
+            selectColor(10);
+        } else if (result == 4) {
+            compareNumbers(1, 5);
+        } else if (result == 5) {
+            addOrSubtractAndPrint(1, 2, true);
+        }
+
 
     }
 
-    public static void greetings() {
+        public static void greetings() {
         System.out.println("Hello");
         System.out.println("World");
         System.out.println("from");
@@ -37,6 +53,7 @@ public class Homework {
             System.out.println("Цвета закончились");
         }
     }
+
     public static void compareNumbers(int a, int b) {
         if (a >= b) {
             System.out.println("a >= b");
@@ -46,4 +63,15 @@ public class Homework {
 
     }
 
+    public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
+        increment = true;
+        if (!increment) {
+            int sum = initValue + delta;
+            System.out.println(sum);
+        } else {
+            int minus = initValue - delta;
+            System.out.println(minus);
+        }
+
+    }
 }
