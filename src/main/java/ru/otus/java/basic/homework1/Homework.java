@@ -45,14 +45,15 @@ public class Homework {
 
         if (data <= 10) {
             System.out.println("Красный");
-        } else if (data > 10 && data <= 20) {
+        } else if (data <= 20) {
             System.out.println("Желтый");
-        } else if (data > 20) {
-            System.out.println("Зеленый");
         } else {
-            System.out.println("Цвета закончились");
+            System.out.println("Зеленый");
         }
-    }
+
+        }
+
+
 
     public static void compareNumbers(int a, int b) {
         if (a >= b) {
@@ -62,10 +63,9 @@ public class Homework {
         }
 
     }
-
     public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
         increment = true;
-        if (!increment) {
+        if (increment) {
             int sum = initValue + delta;
             System.out.println(sum);
         } else {
@@ -73,5 +73,8 @@ public class Homework {
             System.out.println(minus);
         }
 
+
+        }
+
     }
-}
+
