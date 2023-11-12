@@ -1,18 +1,35 @@
 package ru.otus.java.basic.homework4;
 
 public class User {
-    private String UserName;
+    private String userName;
     private int yearOfBirth;
     private String emailAddress;
 
     public User(String userName, int yearOfBirth, String emailAddress) {
-        UserName = userName;
+        this.userName = userName;
         this.yearOfBirth = yearOfBirth;
         this.emailAddress = emailAddress;
     }
 
+    public static void userInformation(User[] users) {
+
+        for (int i = 0; i < users.length; i++) {
+
+            System.out.println("ФИО: " + users[i].userName + "\n" + "Год рождения: " + users[i].yearOfBirth + "\n" + "e-mail: " + users[i].emailAddress + "\n");
+        }
+    }
+
+    public static void getAge(User[] users) {
+        int userAge = 0;
+        int thisYear = 2023;
+        for (int i = 0; i < users.length; i++) {
+            userAge = thisYear - users[i].yearOfBirth;
+            System.out.println("ФИО: " + users[i].userName + ", " + "возраст " + userAge + ".");
+        }
+    }
+
     public void setUserName(String userName) {
-        UserName = userName;
+        this.userName = userName;
     }
 
     public void setYearOfBirth(int yearOfBirth) {
@@ -24,7 +41,7 @@ public class User {
     }
 
     public String getUserName() {
-        return UserName;
+        return userName;
     }
 
     public int getYearOfBirth() {

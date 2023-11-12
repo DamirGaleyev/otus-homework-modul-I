@@ -1,40 +1,40 @@
 package ru.otus.java.basic.homework4;
 
 public class Box {
-    private final String  SIZE;
+    private final String size;
     private String color;
-    private String freeSpace;
+    private String boxСondition;
     private String openClose;
-    String pusto = "пусто";
-    String full = "полная";
-    String opened = "Открытая";
-    String closed = "Закрытая";
-    String item;
+    private static final String PUSTO = "пусто";
+    private static final String FULL = "полная";
+    private static final String OPENED = "Открытая";
+    private static final String CLOSED = "Закрытая";
+    private static final String ITEM = null;
 
     public void setColor(String color) {
         this.color = color;
     }
 
-    public void setFreeSpace(String freeSpace) {
-        this.freeSpace = freeSpace;
+    public void setBoxСondition(String boxСondition) {
+        this.boxСondition = boxСondition;
     }
 
     public void setOpenClose(String openClose) {
         this.openClose = openClose;
     }
 
-    public String getFreeSpace() {
-        return freeSpace;
+    public String getBoxСondition() {
+        return boxСondition;
     }
 
     public String getOpenClose() {
         return openClose;
     }
 
-    public Box(String SIZE, String color, String freeSpace, String openClose) {
-        this.SIZE = SIZE;
+    public Box(String size, String color, String boxСondition, String openClose) {
+        this.size = size;
         this.color = color;
-        this.freeSpace = freeSpace;
+        this.boxСondition = boxСondition;
         this.openClose = openClose;
     }
 
@@ -43,28 +43,28 @@ public class Box {
     }
 
     public void info() {
-        System.out.println("Коробка имеет следующие характеристики: размер " + SIZE + ";" + " Цвет: " + color + ";" + " в коробке: " + freeSpace + ";" + " Крышка коробки: " + openClose + ".");
+        System.out.println("Коробка имеет следующие характеристики: размер " + size + ";" + " Цвет: " + color + ";" + " в коробке: " + boxСondition + ";" + " Крышка коробки: " + openClose + ".");
         System.out.println();
 
     }
 
     public void add(String item) {
         System.out.println("Положим ка предмет: " + item);
-        if ((getFreeSpace().equals(pusto)) && (getOpenClose().equals(opened))) {
+        if ((getBoxСondition().equals(PUSTO)) && (getOpenClose().equals(OPENED))) {
             System.out.println("в коробку положен предмет " + item);
-            setFreeSpace(item);
+            setBoxСondition(item);
             System.out.println();
-        } else if ((getFreeSpace() != null) && (getOpenClose().equals(opened))) {
+        } else if ((getBoxСondition() != null) && (getOpenClose().equals(OPENED))) {
 
             System.out.println("Сначала освободи пространство коробки, чудила");
             System.out.println();
 
 
-        } else if ((getFreeSpace() != null) && (getOpenClose().equals(closed))) {
+        } else if ((getBoxСondition() != null) && (getOpenClose().equals(CLOSED))) {
             System.out.println("Коробка закрытая и полная, ничего не выйдте мужичок");
             System.out.println();
 
-        } else if ((getFreeSpace().equals(pusto)) && (getOpenClose().equals(closed))) {
+        } else if ((getBoxСondition().equals(PUSTO)) && (getOpenClose().equals(CLOSED))) {
             System.out.println("Для начала неплохо бы открыть коробочку");
             System.out.println();
 
@@ -76,11 +76,11 @@ public class Box {
     public void drop(String item) {
         System.out.println("Достанем ка барахлишко в виде: " + item);
 
-        if ((getFreeSpace().equals(item)) && (getOpenClose().equals(opened))) {
+        if ((getBoxСondition().equals(item)) && (getOpenClose().equals(OPENED))) {
             System.out.println("Из коробки вынут предмет " + item);
-            setFreeSpace(pusto);
-        } else if (!(getFreeSpace().equals(item)) && (getOpenClose().equals(opened))) {
-            System.out.println("В коробке размещен " + getFreeSpace() + " и там нет такого предмета как " + item + ". Давай попробуем еще разок..");
+            setBoxСondition(PUSTO);
+        } else if (!(getBoxСondition().equals(item)) && (getOpenClose().equals(OPENED))) {
+            System.out.println("В коробке размещен " + getBoxСondition() + " и там нет такого предмета как " + item + ". Давай попробуем еще разок..");
             System.out.println();
         } else {
             System.out.println("Прежде чем освободить надо открыть коробку");

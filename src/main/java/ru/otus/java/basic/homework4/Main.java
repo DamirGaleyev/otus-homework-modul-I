@@ -15,6 +15,9 @@ public class Main {
         };
 
         ageMore40(users);
+        System.out.println();
+        User.userInformation(users);
+        User.getAge(users);
     }
 
     public static void ageMore40(User[] users) {
